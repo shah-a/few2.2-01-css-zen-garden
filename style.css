@@ -1,21 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
+/*
+ * Colour palette:
+ * #ffffff -- light
+ * #010025 -- dark
+ * #ea485d -- red
+ * #ff9138 -- orange
+ * #ffeb98 -- yellow
+ * #00cfea -- blue
+ *
+ * Reference: https://howdns.works/
+ */
+
+:root {
+  --light: #ffffff;
+  --dark: #010025;
+  --red: #ea485d;
+  --orange: #ff9138;
+  --yellow: #ffeb98;
+  --blue: #00cfea;
+}
+
+*, ::before, ::after {
+	box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  line-height: 1.5rem;
+  color: var(--dark);
+}
+
+body p {
+  line-height: 1.5em;
 }
 
 h1, h2, h3 {
+  margin: 0;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-h1 {
+header > h1 {
   font-size: 15rem;
 }
 
-h2 {
+header > h2 {
   font-size: 5rem;
+}
+
+header abbr {
+  color: var(--red);
 }
