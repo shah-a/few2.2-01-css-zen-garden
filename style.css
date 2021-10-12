@@ -22,8 +22,10 @@
   --blue: #00cfea;
 }
 
+/* BASE STYLES */
+
 *, ::before, ::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -31,10 +33,11 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: var(--dark);
+  background-color: var(--light);
 }
 
 body p {
-  line-height: 1.5em;
+  line-height: 1.5;
 }
 
 h1, h2, h3 {
@@ -42,14 +45,116 @@ h1, h2, h3 {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-header > h1 {
-  font-size: 15rem;
-}
-
-header > h2 {
+h2 {
   font-size: 5rem;
 }
 
-header abbr {
+h3 {
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+a:hover {
   color: var(--red);
+}
+
+abbr {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* TITLE BLOCK */
+
+.intro {
+  margin-bottom: 3rem;
+  padding: 3rem;
+  color: var(--light);
+  background: var(--dark);
+}
+
+header > h1 {
+  font-size: 3rem;
+}
+
+header abbr {
+  background: linear-gradient(90deg, var(--red), var(--yellow));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-decoration: none;
+}
+
+/* GRID LAYOUT */
+
+.page-wrapper {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    ". content ."
+    "footer footer footer";
+}
+
+.intro { grid-area: header;}
+.sidebar { grid-area: footer;}
+
+.main,
+.participation,
+.benefits,
+.requirements
+{ grid-area: content;}
+
+/* FOOTER BUTTONS */
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+footer > a {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-weight: 700;
+  border: 1px solid var(--blue);
+  border-radius: 0.25rem;
+  background-color: var(--blue);
+  color: var(--light);
+  transition: 150ms linear;
+}
+
+footer > a:hover {
+  color: var(--red);
+  background: var(--light);
+}
+
+/* FOOTER CARDS */
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
+}
+
+.wrapper > div {
+  display: inline-flex;
+  margin: 1rem;
+  min-width: 250px;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+}
+
+.wrapper > div > h3 {
+  font-size: 1rem;
+  padding: 1rem;
+  color: var(--light);
+  background-color: var(--dark);
+}
+
+.wrapper ul {
+  list-style: none;
+  padding: 1rem;
 }
